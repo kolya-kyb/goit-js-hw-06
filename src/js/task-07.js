@@ -1,5 +1,4 @@
-const validationInputEl = document.querySelector('#validation-input');
-
-validationInputEl.addEventListener('blur', () => Number(event.currentTarget.dataset.length) === event.currentTarget.value.length ? event.currentTarget.classList.add("valid") : event.currentTarget.classList.add("invalid"))
-
-validationInputEl.addEventListener('focus', () => event.currentTarget.classList.value = "");
+const inputFontSizeEl = document.querySelector('#font-size-control');
+const textEl = document.querySelector('#text');
+textEl.style.fontSize = inputFontSizeEl.value +"px"
+inputFontSizeEl.addEventListener('input', (event) => textEl.style.fontSize = event.currentTarget.value +"px");

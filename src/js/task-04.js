@@ -5,7 +5,7 @@ const value = document.querySelector('#value');
 let count = 0;
 const render = () => value.textContent = count; 
 
-const handleDecrButnClick = () => {
+const handleDecrBtnClick = () => {
     count -= 1;
     render();
     
@@ -17,5 +17,5 @@ const handleIncrBtnClick= () => {
 
 render();
 
-decrButtonEl.addEventListener('click', handleDecrButnClick);
+decrButtonEl.addEventListener('click', handleDecrBtnClick);
 incrButtonEl1.addEventListener('click', handleIncrBtnClick);
