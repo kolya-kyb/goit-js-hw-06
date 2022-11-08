@@ -1,12 +1,5 @@
 const form = document.querySelector("form.login-form");
 
-class UserDate {
-  constructor({ email, password }) {
-    this.email = email;
-    this.password = password;
-  }
-}
-
 const handleSubmit = (event) => {
   event.preventDefault();
   const {
@@ -15,11 +8,14 @@ const handleSubmit = (event) => {
   if (email.value === "" || password.value === "") {
     return alert(" Всі поля форми повинні бути заповнені");
   }
-  const user1 = new UserDate({
-    email: email.value,
-    password: password.value,
+
+  const user = {};
+  const formDate = new FormData(event.currentTarget);
+  formDate.forEach((value, name) => {
+    user[name] = value;
   });
-  console.log(user1);
+
+  console.log("user", user);
   event.currentTarget.reset();
 };
 form.addEventListener("submit", handleSubmit);
